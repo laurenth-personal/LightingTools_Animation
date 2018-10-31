@@ -1942,7 +1942,6 @@ GameObject:
   - component: {fileID: 1297650283}
   - component: {fileID: 1297650281}
   - component: {fileID: 1297650285}
-  - component: {fileID: 1297650287}
   - component: {fileID: 1297650282}
   m_Layer: 0
   m_Name: Main Camera
@@ -2134,18 +2133,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &1297650287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297650280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a636f62116c0a40bbfefdf876d4608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1433365874
 GameObject:
   m_ObjectHideFlags: 0
@@ -2696,12 +2683,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5632dd5b3234f64bbacdf0c34cad79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialID: 0
-  color: {r: 1, g: 0.9990566, b: 0.995283, a: 1}
-  colorName: _EmissiveColor
+  targetMaterialID: 0
+  colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
   emissiveDimmer: 1
-  driveEmissiveWithLight: 1
   additionalLight: {fileID: 1239387470}
+  inheritLightColor: 0
 --- !u!23 &1886096186
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3396,12 +3382,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5632dd5b3234f64bbacdf0c34cad79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialID: 0
-  color: {r: 1, g: 0.9990566, b: 0.995283, a: 1}
-  colorName: _EmissiveColor
+  targetMaterialID: 0
+  colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
   emissiveDimmer: 1
-  driveEmissiveWithLight: 1
   additionalLight: {fileID: 114600619915666046}
+  inheritLightColor: 0
 --- !u!1 &2112121012
 GameObject:
   m_ObjectHideFlags: 0

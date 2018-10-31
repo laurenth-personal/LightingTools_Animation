@@ -4,7 +4,7 @@ using UnityEngine.Experimental.Rendering.HDPipeline;
 public class LightAnimationManager : MonoBehaviour
 {
     private HDAdditionalLightData additionalLightData;
-    private MaterialBlockHandler matBlockHandler;
+    private MaterialEmissionDimmer matEmissionDimmer;
     private float _oldValue;
 
     private LightEventAnimation[] lightAnimations;
@@ -14,13 +14,13 @@ public class LightAnimationManager : MonoBehaviour
         lightAnimations = GetComponents<LightEventAnimation>();
         if (gameObject.GetComponent<HDAdditionalLightData>())
             additionalLightData = gameObject.GetComponent<HDAdditionalLightData>();
-        else if (gameObject.GetComponent<MaterialBlockHandler>())
-            matBlockHandler = gameObject.GetComponent<MaterialBlockHandler>();
+        else if (gameObject.GetComponent<MaterialEmissionDimmer>())
+            matEmissionDimmer = gameObject.GetComponent<MaterialEmissionDimmer>();
     }
 
     void Update()
     {
-        if (additionalLightData == null && matBlockHandler == null)
+        if (additionalLightData == null && matEmissionDimmer == null)
             return;
         if (lightAnimations.Length <= 0)
             return;
@@ -31,8 +31,8 @@ public class LightAnimationManager : MonoBehaviour
         }
         //if( _oldValue != currentValue )
         //{
-            if (matBlockHandler != null)
-                matBlockHandler.emissiveDimmer = currentValue;
+            if (matEmissionDimmer != null)
+                matEmissionDimmer.emissiveDimmer = currentValue;
             else if (additionalLightData != null)
             {
                 additionalLightData.lightDimmer = currentValue;
@@ -47,8 +47,8 @@ public class LightAnimationManager : MonoBehaviour
     {
         OnEnable();
 
-        if (matBlockHandler != null)
-            matBlockHandler.emissiveDimmer = dimmer;
+        if (matEmissionDimmer != null)
+            matEmissionDimmer.emissiveDimmer = dimmer;
         if (additionalLightData != null)
         {
             additionalLightData.lightDimmer = dimmer;
